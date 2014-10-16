@@ -7,8 +7,9 @@ class MySQL
 	{
 		if(!self::$instance)
 		{
-			self::$instance = new PDO();
-
+			global $CONFIG;
+			self::$instance = new PDO("mysql:host=".$CONFIG["db_host"].";dbname={$CONFIG['db_name']}",$CONFIG['db_user'],$CONFIG['db_pass']);
+			self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		return self::$instance;
 	}

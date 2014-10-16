@@ -1,10 +1,10 @@
 <?php
-	include 'Toro.php';
-	Toro::serve(
-	array(
+		
+	require ("Toro.php");
+	require ("config/bootstrap.php");
+	Toro::serve(array(
 		'/'=>'HomeController',
 		'/login'=>'LoginController',
 		'/register'=>'RegisterController'
-		)
-	)
+		));
 ?>
