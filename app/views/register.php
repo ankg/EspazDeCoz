@@ -3,14 +3,14 @@
 	<head>
 		<title>SAKS | Register</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/default.css">
-		<link rel="stylesheet" type="text/css" href="css/headerFooter.css">
-		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/headerFooter.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/login.css">
 	</head>
 
 	<body>
 		<div id="container">
-			<?php include_once 'header.php'; ?>
+			<?php require_once 'header.php'; ?>
 			<div id="registerMid" class="mid afterClear">
 				<div id="register" class="left">
 					<h3 class="heading">Register</h3>
@@ -40,10 +40,10 @@
 				</div>
 				<div id="randomImage" class="right"></div>
 			</div>
-			<?php include_once 'footer.php'; ?>
+			<?php require_once 'footer.php'; ?>
 		</div>
 
-		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="js/validation.js"></script>
+		<script type="text/javascript" src="app/assets/js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="app/assets/js/validation.js"></script>
 	</body>
 </html>

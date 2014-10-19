@@ -3,14 +3,14 @@
 	<head>
 		<title>SAKS | Login</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/default.css">
-		<link rel="stylesheet" type="text/css" href="css/headerFooter.css">
-		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/headerFooter.css">
+		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/login.css">
 	</head>
 
 	<body>
 		<div id="container">
-			<?php include_once 'header.php'; ?>
+			<?php require_once 'header.php'; ?>
 			<div id="loginMid" class="mid afterClear">
 				<div id="logIn" class="left">
 					<h3 class="heading">Log In</h3>
@@ -26,16 +26,16 @@
 							</div>
 							<label class="secInput"><input type="checkbox" ><span class="styleCheckbox"></span>Remember me?</label>
 							<label class="secInput"><input type="checkbox" ><span class="styleCheckbox"></span>Forgot password?</label>
-							<div class="registerLink"><a href="register.php">Register?</a></div>
+							<div class="registerLink"><a href="/register">Register?</a></div>
 							<input class="borderBox" type="submit" value="Log In">
 						</form>
 					</div>
 				</div>
 				<div id="randomImage" class="right"></div>
 			</div>
-			<?php include_once 'footer.php'; ?>
+			<?php require_once 'footer.php'; ?>
 		</div>
 
-		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="app/assets/js/jquery-1.11.0.min.js"></script>
 	</body>
 </html>
