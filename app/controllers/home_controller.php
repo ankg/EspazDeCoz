@@ -1,12 +1,11 @@
 <?php
 	class HomeController
 	{
-	public function get()
-	{
-	
-	require('app/views/login.php');
-	}
-	
+		public static function get()
+		{
+			
+			return('app/views/home.php');
+		}
 
 	}
 ?>

@@ -2,8 +2,8 @@
 
 class MySQL
 {
-	$instance=NULL;	
-	function getInstance()
+	private static $instance=NULL;	
+	public static function getInstance()
 	{
 		if(!self::$instance)
 		{

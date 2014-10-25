@@ -15,23 +15,23 @@
 				<div id="register" class="left">
 					<h3 class="heading">Register</h3>
 					<div id="registerForm">
-						<form action="" method="POST">
-							<label class="secInput"><input name="status" checked type="radio" ><span class="styleCheckbox"></span>Student</label>
-							<label class="secInput"><input name="status" type="radio" ><span class="styleCheckbox"></span>Professor</label>
+						<form action="/register" method="POST">
+							<label class="secInput"><input name="status" checked type="radio" value="0"><span class="styleCheckbox"></span>Student</label>
+							<label class="secInput"><input name="status" type="radio" value="1" ><span class="styleCheckbox"></span>Professor</label>
 							<div class="inputField">
-								<input id="username" maxlength="15" class="borderBox" type="text" spellcheck="false" />
+								<input id="username" name="username" maxlength="15" class="borderBox" type="text" spellcheck="false" />
 								<label class="fieldLabel" for="username">Username</label>
 							</div>
 							<div class="inputField">
-								<input id="fullname" maxlength="30" class="borderBox" type="text" spellcheck="false" />
+								<input id="fullname" name="fullname" maxlength="30" class="borderBox" type="text" spellcheck="false" />
 								<label class="fieldLabel" for="fullname">Full Name</label>
 							</div>
 							<div class="inputField">
-								<input id="email" class="borderBox" type="text" spellcheck="false" />
+								<input id="email" name="email" class="borderBox" type="text" spellcheck="false" />
 								<label class="fieldLabel" for="email">IITR Mail</label>
 							</div>
 							<div class="inputField">
-								<input id="password" class="borderBox" type="password" spellcheck="false" />
+								<input id="password" name="password" class="borderBox" type="password" spellcheck="false" />
 								<label class="fieldLabel" for="password">Password</label>
 							</div>
 							<input class="borderBox" type="submit" value="Register">

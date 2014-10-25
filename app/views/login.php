@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	if(isset($_SESSION['message']))
+		echo $_SESSION['message'];
+?>
 <html lang="en">
 	<head>
 		<title>SAKS | Login</title>
@@ -17,11 +21,11 @@
 					<div id="loginForm">
 						<form action="" method="POST">
 							<div class="inputField">
-								<input id="username" class="borderBox" type="text" spellcheck="false" />
+								<input id="username" name="username" class="borderBox" type="text" spellcheck="false" />
 								<label class="fieldLabel" for="username">Username</label>
 							</div>
 							<div class="inputField">
-								<input id="password" class="borderBox" type="password" spellcheck="false" />
+								<input id="password" name="password" class="borderBox" type="password" spellcheck="false" />
 								<label class="fieldLabel" for="password">Password</label>
 							</div>
 							<label class="secInput"><input type="checkbox" ><span class="styleCheckbox"></span>Remember me?</label>
