@@ -15,13 +15,12 @@
 			$password_input = $_POST['password'];
 			$fullname_input = $_POST['fullname'];
 			$email_input    = $_POST['email'];
-			//$cnfpass_input  = $_POST['cnfpassword'];
-			$uid = MySQL::getInstance()->lastInsertId() + 1;
+			//$confpass_input  = $_POST['confpassword'];
+			//$uid = MySQL::getInstance()->lastInsertId() + 1;
 			/**
 			*Creates the hash of Timestamp, takes it's first half and stores it in the db
 			*and also stores the password by adding the hash to it.
 			*/
-			//ToDO:- Add code for password confirmation
 			$date = new DateTime();
 			$time = $date->getTimestamp();
 			$timehash = crypt($time);
@@ -30,9 +29,17 @@
 			/**
 			*Insert the values into the DB
 			*/
+			$query1 = MySQL::getInstance()->prepare("SELECT * FROM `users` where `username` = `$username_input`");
+			$query1->execute();
+			$data = $query1->fetch(PDO::FETCH_ASSOC);
 			
+			if($data!=NULL)
+			{
+				$_SESSION['message'] = 'Username Already Taken';
+				//echo "{error:'Username Already Taken'}";
+				header("Location: /register");
+			}
 
-			
 			$query = MySQL::getInstance()->prepare("INSERT INTO users(username, fullname, password, email, salt,designation) VALUES ('$username_input','$fullname_input','$password_input','$email_input','$salt','$designation')");
 			$val = $query->execute();
 

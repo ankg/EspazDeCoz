@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	if(isset($_SESSION["message"]))
+		echo $_SESSION["message"];
+?>
 <html lang="en">
 	<head>
 		<title>SAKS | Register</title>
@@ -34,6 +38,10 @@
 								<input id="password" name="password" class="borderBox" type="password" spellcheck="false" />
 								<label class="fieldLabel" for="password">Password</label>
 							</div>
+							<!--<div class="inputField">
+								<input id="confpassword" name="confpassword" class="borderBox" type="password" spellcheck="false" />
+								<label class="fieldLabel" for="password">Confirm Password</label>
+							</div>-->
 							<input class="borderBox" type="submit" value="Register">
 						</form>
 					</div>
