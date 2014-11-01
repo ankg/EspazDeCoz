@@ -15,8 +15,6 @@
 			$password_input = $_POST['password'];
 			$fullname_input = $_POST['fullname'];
 			$email_input    = $_POST['email'];
-			//$confpass_input  = $_POST['confpassword'];
-			//$uid = MySQL::getInstance()->lastInsertId() + 1;
 			/**
 			*Creates the hash of Timestamp, takes it's first half and stores it in the db
 			*and also stores the password by adding the hash to it.
@@ -25,23 +23,21 @@
 			$time = $date->getTimestamp();
 			$timehash = crypt($time);
 			$salt = substr($timehash, 0, floor(strlen($timehash) / 2)+1);
+			//$password_input = password_hash($password_input.$salt , PASSWORD_DEFAULT);
 			$password_input = password_hash($password_input.$salt , PASSWORD_DEFAULT);
 			/**
 			*Insert the values into the DB
 			*/
-			$query1 = MySQL::getInstance()->prepare("SELECT * FROM `users` where `username` = `$username_input`");
-			$query1->execute();
-			$data = $query1->fetch(PDO::FETCH_ASSOC);
-			
+			$user = new User($username_input);
+			$data = $user->getUserData($username_input);
+
 			if($data!=NULL)
 			{
 				$_SESSION['message'] = 'Username Already Taken';
-				//echo "{error:'Username Already Taken'}";
 				header("Location: /register");
 			}
 
-			$query = MySQL::getInstance()->prepare("INSERT INTO users(username, fullname, password, email, salt,designation) VALUES ('$username_input','$fullname_input','$password_input','$email_input','$salt','$designation')");
-			$val = $query->execute();
+			$val = $user->registerUser($username_input, $email_input, $password_input, $fullname_input, $designation, $salt);
 
 			if($val==TRUE)
 			{	
@@ -50,7 +46,7 @@
 			}
 			else
 			{
-				$_SESSION['message'] = 'Could not Register,Server Error';
+				$_SESSION['message'] = 'Could not Register, Server Error';
 				header("Location: /register");
 			}
 		}

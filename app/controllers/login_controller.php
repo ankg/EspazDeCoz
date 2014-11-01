@@ -17,25 +17,21 @@
 					}
 					$username_input = $_POST['username'];
 					$password_input = $_POST['password'];
-					var_dump($username_input);
-					$query = MySQL::getInstance()->prepare('SELECT * FROM users WHERE username = "$username_input"');
-					$query->execute();
-					$data = $query->fetch(PDO::FETCH_ASSOC); 
+					
+					$user = new User($username_input);
+					$data = $user->getUserData($username_input);
 					if($data == NULL){
-							$_SESSION['message'] = 'username not found';
+							$_SESSION['message'] = 'Username not found';
 							header("Location: /login");
 						}
 					else{
-					$password_check = password_hash($password_input . $data['salt'] , PASSWORD_DEFAULT);
-					if ($password_check!=$data['password']) {
+					
+					if (!(password_verify($password_input.$data['salt'] , $data['password']))) {
 						$_SESSION['message'] = 'Wrong Password';
 						header("Location: /login");
 					}
 					else
 						{
-							//session_start();
-							//$_SESSION['username'] = $username_input;
-							//$_SESSION['uid'] = $data['uid'];
 							setcookie("username",$username_input,time()+3600*24*30);
 							setcookie("uid",$data['uid'],time()+3600*24*30);
 							header("Location: /home");
