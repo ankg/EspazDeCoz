@@ -1,3 +1,4 @@
+
 <div id="header">
 	<div class="mid">
 		<div id="logo" class="left"></div>
@@ -7,7 +8,21 @@
 			</form>
 			<div id="suggestion"></div>
 		</div>
-		<div id="profile" class="left"></div>
-		<div id="logout" class="left"></div>
+		<?php
+	if(isset($_COOKIE))
+	{ $source = $_COOKIE["uid"];
+		if(is_file($source."jpg"))
+			$src = $source."jpg";
+		if(is_file($source."png"))
+			$src = $source."png";
+		if(is_file($source."gif"))
+			$src = $source."gif";
+		?>
+	<div id="profile" class="left"><img src="<?=$src?>"></div>
+	<a href="/logout" id="logout" class="right"></a>
+	<?
+	}
+	?>
+		
 	</div>
 </div>

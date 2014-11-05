@@ -1,0 +1,251 @@
+.singlePost, .input
+	{
+		border:1px solid #d9d9d9;
+		padding-top: 10px;
+		background-color: #fff;
+		margin-bottom: 15px;
+	}
+.singlePost .profilePic img
+	{
+		width: 45px;
+		height: 45px;
+	}
+.ref
+	{
+		font-size: 15px;
+		color: #5074A0;
+		font-weight: bold;
+	}
+.posts .profilePic
+	{
+		width: 45px;
+		height: 45px;
+	}
+.head, .postBody
+	{
+		padding: 0 10px;
+	}
+.head
+	{
+		position: relative;
+	}
+.heading
+	{
+		margin-left: 15px;
+		margin-top: 4px;
+		max-width: 380px;
+	}
+.posts, .menuContent
+	{
+		width: 100%;
+		background-color: #f0f0f0;
+		padding: 30px 0;
+	}
+.postMid, .menuContent > div
+	{
+		width: 960px;
+		margin:0 auto;
+	}
+.posts *
+	{
+		font-family: arial;
+	}
+.posts .heading
+	{
+		font-size: 15px;
+		color: #4c4c4c;
+	}
+.heading .time
+	{
+		margin-top: 3px;
+	}
+.posts .time
+	{
+		font-size: 13px;
+		color: #999;
+	}
+.postBody .textContent
+	{
+		padding: 5px 0;
+		font-size: 15px;
+		color: #4c4c4c;
+	}
+.imageContent, .fileContent
+	{
+		padding: 10px 0;
+	}
+.imageContent
+	{
+		
+	}
+.imageContent img
+	{
+		width: 100%;
+	}
+.fileContent .thumbnail
+	{
+		width: 80px;
+		height: 80px;
+	}
+.fileContent .thumbnail img
+	{
+		width: 100%;
+		height: 100%;
+	}
+.downloadLink
+	{
+		margin-top: 30px;
+	}
+.downloadLink a
+	{
+		font-size: 12px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #395F8C;
+	}
+.commentArea input[type="submit"], .styleBut
+	{
+		padding: 8px 15px;
+		font-size: 12px;
+		color: #fff;
+		background-color: #395F8C;
+		border: 1px solid #fff;
+		box-shadow: 0 0 2px #395F8C;
+		-webkit-transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		-moz-transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		-o-transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+	}
+.commentArea input[type="submit"]:hover, .styleBut:hover
+	{
+		background-color: #747474;
+		box-shadow: 0 0 2px #747474;
+	}
+.postComment
+	{
+		display: none;
+	}
+.commentArea, .commentText
+	{
+		width: 390px;
+		margin-left: 10px;
+	}
+.commentArea .commentBody
+	{
+		width: 390px;
+		height: 32px;
+		box-sizing: border-box;
+		padding: 4px 10px;
+		font-size: 15px;
+		line-height: 22px;
+		color: #4a4a4a;
+		border:1px solid #d9d9d9;
+		-webkit-transition:border-color ease-out 0.3s;
+		-moz-transition:border-color ease-out 0.3s;
+		-o-transition:border-color ease-out 0.3s;
+		transition:border-color ease-out 0.3s;
+	}
+.commentContainer
+	{
+		padding: 10px;
+		padding-bottom: 15px;
+		border-top: 1px solid #d9d9d9;
+		background-color: #f5f5f5;
+	}
+.commentArea .commentBody:focus
+	{
+		border-color: #bdbdbd;
+	}
+.commentArea input[type="submit"]
+	{
+		margin-top: 10px;
+		padding: 4px 15px;
+		height: 32px;
+		font-size: 15px;
+		font-family: tahoma;
+	}
+.commentLink
+	{
+		margin-bottom: 5px;
+	}
+.commentLink a
+	{
+		font-size: 13px;
+		color: #395F8C;
+	}
+.commentLink a span
+	{
+		color: #666;
+	}
+.commentText p
+	{
+		font-size: 14px;
+		color: #3c3c3c;
+		word-wrap:break-word;
+	}
+.singleComment
+	{
+		margin-bottom: 7px;
+	}
+
+.head .vote
+	{
+		z-index: 1000;
+		position: absolute;
+		right: 0;
+		width: 76px;
+		overflow: hidden;
+		height: 52px;
+	}
+.head .vote > div
+	{
+		padding-right: 6px;
+		position: absolute;
+		right: -70px;
+		-webkit-transition:right ease-out 0.3s;
+		-moz-transition:right ease-out 0.3s;
+		-o-transition:right ease-out 0.3s;
+		transition:right ease-out 0.3s;
+	}
+.head .up
+	{
+		top: 0;
+	}
+.head .down
+	{
+		top: 26px;
+	}
+.head .vote button
+	{
+		height: 26px;
+		border: none;
+		background-size: 22px;
+		padding-left: 40px;
+		background-position: 10px center;
+		margin-left: 6px;
+		color: #fff;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 26px;
+		padding-right: 8px;
+	}
+.head .vote > div:hover
+	{
+		right: 0;
+	}
+.head .up, .head .vote .up button
+	{
+		background-color: #3c948b;
+	}
+.head .down, .head .vote .down button
+	{
+		background-color: #DB7265;
+	}
+.head .vote .up button
+	{
+		background-image: url('../image/arrowUp.png');
+	}
+.head .vote .down button
+	{
+		background-image: url('../image/arrowDown.png');
+	}

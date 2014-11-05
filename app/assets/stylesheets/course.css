@@ -1,0 +1,98 @@
+.heading .refDept
+	{
+		color: #696868;
+	}
+.heading .refBranch
+	{
+		color: #989898;
+	}
+#container
+	{
+		width: 960px;
+		margin: 0 auto;
+		padding-bottom: 50px;
+	}
+.catalog, .singleCourse
+	{
+		padding: 30px 0;
+	}
+.catalogData
+	{
+		margin-top: 30px;
+	}
+.heading a
+	{
+		font-size: 30px;
+		font-weight: bold;
+		font-family: arial;
+	}
+.heading a:hover
+	{
+		text-decoration: underline;
+	}
+.catalogData a, .catalogData li
+	{
+		font-size: 15px;
+		color: #777;
+	}
+.catalogData a:hover
+	{
+		text-decoration: underline;
+	}
+.catalogData a.myBranch
+	{
+		color: #395F8C;
+		font-weight: bold;
+	}
+.catalog ol
+	{
+		
+		margin-left: 50px;
+	}
+li span.courseCount
+	{
+		font-size: 12px;
+	}
+ol li
+	{
+		margin: 2px 0;
+		list-style-type: decimal;
+	}
+.courseName
+	{
+		font-size: 24px;
+		color: #395F8C;
+		margin: 8px 0;
+		margin-bottom: 10px;
+	}
+.courseName span, .pdfDisplay .detail
+	{
+		color: #686868;
+	}
+.registerCourse p
+	{
+		font-size: 14px;
+		color: #989898;
+	}
+.registerCourse a, .pdfDisplay .detail a
+	{
+		color: #395F8C;
+		font-weight: bold;
+		margin-left: 20px;
+	}
+.registerCourse a:hover, .pdfDisplay .detail a:hover
+	{
+		text-decoration: underline;
+	}
+.pdfDisplay .detail
+	{
+		margin: 10px 0;
+		font-size: 18px;
+	}
+.pdf
+	{
+		margin-top: 10px;
+		height: 1070px;
+		width: 960px;
+		border:1px solid #9D9D9D
+	}

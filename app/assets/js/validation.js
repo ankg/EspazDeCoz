@@ -7,6 +7,7 @@ function setGreenBorder( elt /* jquery object */ )
 
 	removePrevErrorDialog( elt );
 	elt.css({ 'border-color' : greenColor });
+	elt.attr('data-valid', 'true');
 	elt.parent().removeClass( errorClass );
 	
 }
@@ -28,6 +29,7 @@ function setRedBorder( elt /* jquery object */ )
 
 	removePrevErrorDialog( elt );
 	elt.css({ 'border-color' : redColor });
+	elt.attr('data-valid', 'false');
 	elt.parent().addClass( errorClass );
 }
 
@@ -42,9 +44,34 @@ function displayErrorDialog( elt /* jquery object */ , msg )
 	dialog.appendTo( elt.parent() );
 }
 
-function checkUserName( username )
+function checkUserName( username, clicked )
 {
-	return { success : false, msg : "Username is already taken" };
+	if( username == '' )
+		return;
+	// change url accordingly
+	$.ajax( '/register',
+	{
+		type : 'GET',
+		dataType : 'json',
+		data : { 'username' : username },
+		success : getValidity
+	});
+
+	function getValidity( data )
+	{
+		if( data.valid )
+		{
+			// valid
+			setGreenBorder( clicked );
+		}
+		else
+		{
+			// not valid
+			var msg = data.msg;
+			setRedBorder( clicked );
+			displayErrorDialog( clicked, msg );
+		}
+	}
 }
 
 function inputFieldBlur( event )
@@ -54,20 +81,7 @@ function inputFieldBlur( event )
 
 	switch( id )
 	{
-		case "username":    var result = checkUserName( clicked.val() );
-							if( result.success )
-							{
-								// valid username
-								setGreenBorder( clicked );
-							}
-							else
-							{
-								// invalid username
-								var msg = result.msg;
-								setRedBorder( clicked );
-								displayErrorDialog( clicked, msg );
-							}
-
+		case "username":    checkUserName( clicked.val(), clicked );
 							break;
 		
 		case "fullname":    var fullname = /^[a-zA-Z ]{1,30}$/;

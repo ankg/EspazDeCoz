@@ -5,8 +5,10 @@
 		{
 			require_once('app/views/register.php');
 		}
-		public static function post()
+		public static function post_xhr()
 		{
+			//username existence check, echo JSON format
+			//login check
 			/**
 			*Stores the $_POST values in respective variables
 			*/
@@ -30,25 +32,26 @@
 			*/
 			$user = new User($username_input);
 			$data = $user->getUserData($username_input);
-
-			if($data!=NULL)
-			{
-				$_SESSION['message'] = 'Username Already Taken';
-				header("Location: /register");
-			}
-
 			$val = $user->registerUser($username_input, $email_input, $password_input, $fullname_input, $designation, $salt);
 
 			if($val==TRUE)
 			{	
-				$_SESSION['message'] = 'Successfully Registered';
-				header("Location: /login");
+				echo "{\"register\":true}";
 			}
 			else
 			{
-				$_SESSION['message'] = 'Could not Register, Server Error';
-				header("Location: /register");
+				echo "{\"register\":false,\"msg\":\"Could not Register, Server Error\"}";
 			}
+		}
+		public static function get_xhr()
+		{
+			$username_input = $_GET['username'];
+			$user = new User($username_input);
+			$data = $user->getUserData($username_input);
+			if($data==NULL)
+				echo "{\"valid\":\"true\"}";
+			else
+				echo "{\"valid\":false,\"msg\":\"Username is already taken.\"}";
 		}
 	}
 ?>

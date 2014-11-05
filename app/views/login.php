@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/login.css">
 	</head>
 
-	<body>
+	<body class="footBot">
 		<div id="container">
 			<?php require_once 'header.php'; ?>
 			<div id="loginMid" class="mid afterClear">
@@ -28,8 +28,9 @@
 								<input id="password" name="password" class="borderBox" type="password" spellcheck="false" />
 								<label class="fieldLabel" for="password">Password</label>
 							</div>
-							<label class="secInput"><input type="checkbox" ><span class="styleCheckbox"></span>Remember me?</label>
-							<label class="secInput"><input type="checkbox" ><span class="styleCheckbox"></span>Forgot password?</label>
+							<div class="hidden error"></div>
+							<label class="secInput"><input type="checkbox" id="remember" ><span class="styleCheckbox"></span>Remember me?</label>
+							<label class="secInput"><a href="forgot.php">Forgot password?</a></label>
 							<div class="registerLink"><a href="/register">Register?</a></div>
 							<input class="borderBox" type="submit" value="Log In">
 						</form>
@@ -41,5 +42,6 @@
 		</div>
 
 		<script type="text/javascript" src="app/assets/js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="app/assets/js/loginConfirm.js"></script>
 	</body>
 </html>

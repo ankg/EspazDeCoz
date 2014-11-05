@@ -86,6 +86,11 @@ input[type="submit"]:hover
 		margin-bottom: 8px;
 		display: inline-block;
 	}
+.secInput a
+	{
+		margin-left: 20px;
+		color: #395F8C;
+	}
 #registerForm .secInput
 	{
 		margin: 0 10px 12px 0;
@@ -135,4 +140,8 @@ input[type="submit"]:hover
 	{
 		left: 106%;
 		opacity: 1;
+	}
+#loginForm .error
+	{
+		margin-bottom: 8px;
 	}

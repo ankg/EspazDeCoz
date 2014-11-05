@@ -1,0 +1,132 @@
+.input
+	{
+		background-color: #f5f5f5;
+	}
+.input .display
+	{
+		padding: 0 10px;
+	}
+.display textarea
+	{
+		float: left;
+		padding: 4px 10px;
+		width: 426px;
+		font-size: 15px;
+		line-height: 22px;
+		color: #4a4a4a;
+		border:1px solid #d9d9d9;
+		-webkit-transition:border-color ease-out 0.3s;
+		-moz-transition:border-color ease-out 0.3s;
+		-o-transition:border-color ease-out 0.3s;
+		transition:border-color ease-out 0.3s;
+		border-bottom: none;
+	}
+.display textarea:focus
+	{
+		border-color: #bdbdbd;
+	}
+.display textarea:focus ~ div
+	{
+		border-color: #bdbdbd;
+	}
+.progress
+	{
+		position: relative;
+		height: 6px;
+		margin: 12px 10px;
+		background-color: #f0f0f0;
+		width: 345px;
+	}
+.progress .highlight
+	{
+		height: 6px;
+		background-color: #5074A0;
+	}
+.imageDisplay img
+	{
+		max-width: 150px;
+	}
+.fileDisplay, .imageDisplay
+	{
+		-webkit-transition:border-color ease-out 0.3s;
+		-moz-transition:border-color ease-out 0.3s;
+		-o-transition:border-color ease-out 0.3s;
+		transition:border-color ease-out 0.3s;
+		width: 100%;
+		box-sizing:border-box;
+		padding: 10px;
+		float: left;
+		background-color: #fff;
+		border-left: 1px solid #d9d9d9;
+		border-right: 1px solid #d9d9d9;
+	}
+.fileDisplay img
+	{
+		width: 80px;
+	}
+.fileDisplay .name
+	{
+		font-size: 14px;
+		color: #4c4c4c;
+		margin-bottom: 5px;
+	}
+.controlsContainer
+	{
+		-webkit-transition:border-color ease-out 0.3s;
+		-moz-transition:border-color ease-out 0.3s;
+		-o-transition:border-color ease-out 0.3s;
+		transition:border-color ease-out 0.3s;
+		border:1px solid #d9d9d9;
+		border-top: none;
+		background-color: #fff;
+	}
+.uploadButton
+	{
+		border-top: 1px solid #d9d9d9;
+		border-left: 1px solid #d9d9d9;
+	}
+.uploadButton input[type="file"]
+	{
+		display: none;
+	}
+.uploadButton label
+	{
+		cursor: pointer;
+		display: inline-block;
+		float: left;
+		width: 40px;
+		height: 30px;
+		background-position: center;
+		background-size: 22px;
+	}
+.uploadButton .image
+	{
+		background-image: url('../image/pictureUpload.png');
+	}
+.uploadButton .file
+	{
+		background-image: url('../image/fileUpload.png');
+	}
+.button
+	{
+		padding: 10px;
+		color: #A9A9A9;
+		font-size: 14px;
+	}
+.button .styleBut
+	{
+		margin-right: 10px;
+	}
+.styleBut
+	{
+		border:1px solid #fff !important;
+		font-size: 14px;
+	}
+.cancel
+	{
+		margin-left: 10px;
+		font-size: 14px;
+		color: #595959;
+		border:none;
+		background: transparent;
+	}
