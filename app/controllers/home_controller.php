@@ -5,7 +5,7 @@
 		{
 			
 			//get all courses in $courses
-			$uid = $_COOKIE['uid'];
+			/*$uid = $_COOKIE['uid'];
 			$courses2 = new Course();
 			$courses = $courses2->getCourseByUid($uid);
 			$data_final = array();
@@ -17,7 +17,7 @@
 			}
 			
 
-			require_once('app/views/home.php');
+			require_once('app/views/home.php');*/
 		}
 
 	}

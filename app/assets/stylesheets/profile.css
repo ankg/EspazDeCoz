@@ -31,8 +31,10 @@
 	{
 		width: 100%;
 	}
-.picEdit button
+.picEdit .edit
 	{
+		display: inline-block;
+		line-height: 40px;
 		cursor: pointer;
 		background-color: #343434;
 		border:none;
@@ -43,14 +45,19 @@
 		color: #fff;
 		font-size: 17px;
 	}
+.picEdit .edit:hover
+	{
+		text-decoration: none;
+	}
+.edit input[type="file"]
+	{
+		display: none;
+	}
 .aniContainer
 	{
 		position: absolute;
 		width: 100%;
 		top: 0;
-		-webkit-transition:top ease-out 0.3s;
-		-moz-transition:top ease-out 0.3s;
-		-o-transition:top ease-out 0.3s;
 		transition:top ease-out 0.3s;
 	}
 .pic:hover .aniContainer
@@ -79,16 +86,10 @@
 		font-size: 17px;
 		color: #919191;
 	}
-.details a
-	{
-		display: inline-block;
-		margin-top: 10px;
-		font-size: 14px;
-		color: #5074A0;
-	}
 .menu
 	{
-		margin-top: 30px;
+		margin-top: 40px;
+		margin-left: 100px;
 		height: 40px;
 		box-sizing:border-box;
 		background-color: #f0f0f0;
@@ -111,9 +112,6 @@
 		color: #969696;
 		box-sizing:border-box;
 		border-bottom: 2px solid transparent;
-		-webkit-transition:color ease-out 0.3s, border-color ease-out 0.3s;
-		-moz-transition:color ease-out 0.3s, border-color ease-out 0.3s;
-		-o-transition:color ease-out 0.3s, border-color ease-out 0.3s;
 		transition:color ease-out 0.3s, border-color ease-out 0.3s;
 	}
 .menu li a:hover, .menu li a.active
@@ -124,4 +122,20 @@
 .postMid > div, .menuContent > div > div
 	{
 		width: 470px;
+	}
+.pic .loading
+	{
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 100;
+		background-image: url('../images/loading.gif');
+		background-color: #FFF;
+		background-position: center;
+		border: 1px solid #747474;
 	}

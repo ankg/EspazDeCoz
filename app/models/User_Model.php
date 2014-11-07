@@ -13,7 +13,7 @@
 		private $designation;
 		private $courses;
 		private $salt;
-		function __construct($username_in=NULL)
+		/*function __construct($username_in=NULL)
 		{
 			$query = MySQL::getInstance()->prepare("SELECT * FROM users WHERE username = \"$username_in\"");
 			$query->execute();
@@ -29,6 +29,13 @@
 			$designation = $data['designation'];
 			$courses = $data['courses'];
 			$salt = $data['salt'];
+		}*/
+		function getUserDataByUid($uid)
+		{
+			$query = MySQL::getInstance()->prepare("SELECT * FROM users WHERE uid = \"$uid\"");
+			$query->execute();
+			$data = $query->fetch(PDO::FETCH_ASSOC); 
+			return $data;
 		}
 		function getUserData($username_input=NULL)
 		{
@@ -43,6 +50,22 @@
 			$val = $query->execute();
 			return $val;
 		}
-
+		function getUserPosts($uid)
+		{
+			$post = new Post();
+			return $post->getPostsByUid($uid);
+		}
+		function getUserCourses($uid)
+		{
+			$courses = new Course();
+			return $courses->getCoursesByUid($uid);
+		}
+		function getUserExtraDetails($uid)
+		{
+			$query = MySQL::getInstance()->prepare("SELECT * FROM users_extra WHERE uid = \"$uid\"");
+			$query->execute();
+			$data = $query->fetch(PDO::FETCH_ASSOC); 
+			return $data;
+		}
 	}
 ?>

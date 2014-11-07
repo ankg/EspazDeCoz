@@ -24,6 +24,9 @@
 		'/login/:string'=>'LoginController',
 		'/home' => 'HomeController',
 		'/register'=>'RegisterController',
-
+		'/profile' => 'ProfileController',
+		'/profile/:number' =>'ProfileController',
+		'/logout' => 'LogoutController',
+		'/uploadprofile' => 'UploadProfileController'
 		));
 ?>

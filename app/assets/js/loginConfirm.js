@@ -46,7 +46,7 @@ function loginSuccessHandler( data )
 	}
 	else
 	{
-		document.location="/home";
+		document.location="/profile";
 	}
 }
 

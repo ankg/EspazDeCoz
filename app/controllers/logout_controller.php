@@ -4,8 +4,8 @@
 	{
 		function get()
 		{
-			unset($_COOKIE['username']);
-			unset($_COOKIE['uid']);
+			setcookie('username', '', time()-3600);
+			setcookie('uid', '', time()-3600);
 			header("Location: /");
 		}
 	}

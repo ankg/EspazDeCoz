@@ -9,8 +9,9 @@
 			<div id="suggestion"></div>
 		</div>
 		<?php
-	if(isset($_COOKIE))
-	{ $source = $_COOKIE["uid"];
+	if(isset($_COOKIE["uid"]))
+	{ $source = "app/assets/images/".$_COOKIE["uid"];
+		$src = "app/assets/images/default.jpg";
 		if(is_file($source."jpg"))
 			$src = $source."jpg";
 		if(is_file($source."png"))
@@ -18,7 +19,7 @@
 		if(is_file($source."gif"))
 			$src = $source."gif";
 		?>
-	<div id="profile" class="left"><img src="<?=$src?>"></div>
+	<div id="profile" class="left"><img src=<?="$src"?> ></div>
 	<a href="/logout" id="logout" class="right"></a>
 	<?
 	}

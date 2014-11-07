@@ -41,6 +41,14 @@
 		background-color: #f0f0f0;
 		padding: 30px 0;
 	}
+.menuContent
+	{
+		padding: 0;
+	}
+.menuContent > div
+	{
+		padding: 30px; 0;
+	}
 .postMid, .menuContent > div
 	{
 		width: 960px;
@@ -136,13 +144,11 @@
 		height: 32px;
 		box-sizing: border-box;
 		padding: 4px 10px;
+		/* line-height: 32px; */
 		font-size: 15px;
 		line-height: 22px;
 		color: #4a4a4a;
 		border:1px solid #d9d9d9;
-		-webkit-transition:border-color ease-out 0.3s;
-		-moz-transition:border-color ease-out 0.3s;
-		-o-transition:border-color ease-out 0.3s;
 		transition:border-color ease-out 0.3s;
 	}
 .commentContainer
@@ -202,9 +208,6 @@
 		padding-right: 6px;
 		position: absolute;
 		right: -70px;
-		-webkit-transition:right ease-out 0.3s;
-		-moz-transition:right ease-out 0.3s;
-		-o-transition:right ease-out 0.3s;
 		transition:right ease-out 0.3s;
 	}
 .head .up
@@ -219,6 +222,7 @@
 	{
 		height: 26px;
 		border: none;
+		/* padding-right: 22px; */
 		background-size: 22px;
 		padding-left: 40px;
 		background-position: 10px center;
@@ -243,9 +247,9 @@
 	}
 .head .vote .up button
 	{
-		background-image: url('../image/arrowUp.png');
+		background-image: url('../images/arrowUp.png');
 	}
 .head .vote .down button
 	{
-		background-image: url('../image/arrowDown.png');
+		background-image: url('../images/arrowDown.png');
 	}

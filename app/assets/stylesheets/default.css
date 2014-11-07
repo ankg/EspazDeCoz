@@ -133,29 +133,24 @@ textarea
 	{
 		-webkit-animattion:fade ease-out 0.3s;
 	}
-
-.msg
-	{	
-		position: fixed;
-		width: 200px;
-		margin: 20px auto;
-		top: 60px;
-		z-index: 10000;
-		font-size: 15px;
-		text-align: center;
-		padding: 5px 15px;
-		left: 0;
-		right: 0;
-	}
-.success
+.home .postMid
 	{
-		background: rgb(172, 246, 172);
-		color: rgb(34, 91, 34);
-		border: 1px solid rgb(106, 204, 106);
+		padding-top: 30px !important;
 	}
-.err
+.home .posts
 	{
-		background: rgb(244, 166, 166);
-		color: rgb(198, 52, 52);
-		border: 1px solid rgb(203, 106, 106);	
+		padding: 0;
+		background-color: transparent;
+	}
+.home #container
+	{
+		background-color: #f0f0f0;
+	}
+.opaque
+	{
+		opacity: 1 !important;
+	}
+.textBorder
+	{
+		border:1px solid #dfdfdf !important;
 	}

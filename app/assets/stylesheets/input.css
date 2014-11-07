@@ -15,9 +15,6 @@
 		line-height: 22px;
 		color: #4a4a4a;
 		border:1px solid #d9d9d9;
-		-webkit-transition:border-color ease-out 0.3s;
-		-moz-transition:border-color ease-out 0.3s;
-		-o-transition:border-color ease-out 0.3s;
 		transition:border-color ease-out 0.3s;
 		border-bottom: none;
 	}
@@ -48,9 +45,6 @@
 	}
 .fileDisplay, .imageDisplay
 	{
-		-webkit-transition:border-color ease-out 0.3s;
-		-moz-transition:border-color ease-out 0.3s;
-		-o-transition:border-color ease-out 0.3s;
 		transition:border-color ease-out 0.3s;
 		width: 100%;
 		box-sizing:border-box;
@@ -72,9 +66,6 @@
 	}
 .controlsContainer
 	{
-		-webkit-transition:border-color ease-out 0.3s;
-		-moz-transition:border-color ease-out 0.3s;
-		-o-transition:border-color ease-out 0.3s;
 		transition:border-color ease-out 0.3s;
 		border:1px solid #d9d9d9;
 		border-top: none;
@@ -101,11 +92,11 @@
 	}
 .uploadButton .image
 	{
-		background-image: url('../image/pictureUpload.png');
+		background-image: url('../images/pictureUpload.png');
 	}
 .uploadButton .file
 	{
-		background-image: url('../image/fileUpload.png');
+		background-image: url('../images/fileUpload.png');
 	}
 .button
 	{

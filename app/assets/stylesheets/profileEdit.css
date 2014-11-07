@@ -11,7 +11,7 @@
 		color: #616161;
 		margin: 10px 30px;
 	}
-.type .edit
+.type .edit, .achievement .edit
 	{
 		font-size: 12px;
 		text-transform: uppercase;
@@ -20,9 +20,6 @@
 		line-height: 29px;
 		font-weight: bold;
 		opacity: 0;
-		-webkit-transition:opacity ease-out 0.3s;
-		-moz-transition:opacity ease-out 0.3s;
-		-o-transition:opacity ease-out 0.3s;
 		transition:opacity ease-out 0.3s;
 	}
 .lane > div:hover .edit
@@ -68,4 +65,28 @@ textarea.text
 	{
 		background-color: #747474;
 		box-shadow: 0 0 2px #747474;
+	}
+.classmate .heading, .achievement .heading
+	{
+		color: #747474;
+		font-size: 26px;
+		letter-spacing: 1px;
+		margin: 0 0 20px 0 !important;
+	}
+.classmate .list li
+	{
+		margin: 4px 0;
+	}
+.classmate .list a
+	{
+		font-size: 15px;
+		color: #5074A0;
+	}
+.classmate
+	{
+		min-height: 130px;
+	}
+.classmate .list a:hover
+	{
+		text-decoration: underline;
 	}

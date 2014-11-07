@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php
-	if(isset($_SESSION['message']))
-		echo $_SESSION['message'];
-?>
 <html lang="en">
 	<head>
 		<title>SAKS | Login</title>
