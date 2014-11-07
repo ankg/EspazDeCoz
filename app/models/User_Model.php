@@ -13,23 +13,7 @@
 		private $designation;
 		private $courses;
 		private $salt;
-		/*function __construct($username_in=NULL)
-		{
-			$query = MySQL::getInstance()->prepare("SELECT * FROM users WHERE username = \"$username_in\"");
-			$query->execute();
-			$data = $query->fetch(PDO::FETCH_ASSOC);
-			$uid = $data['uid'];
-			$username =  $data['username'];
-			$email = $data['email'];
-			$alternate_email = $data['alternate_email'];
-			$password = $data['password'];
-			$enroll = $data['enroll'];
-			$fullname = $data['fullname'];
-			$branch = $data['branch'];
-			$designation = $data['designation'];
-			$courses = $data['courses'];
-			$salt = $data['salt'];
-		}*/
+		
 		function getUserDataByUid($uid)
 		{
 			$query = MySQL::getInstance()->prepare("SELECT * FROM users WHERE uid = \"$uid\"");
@@ -66,6 +50,13 @@
 			$query->execute();
 			$data = $query->fetch(PDO::FETCH_ASSOC); 
 			return $data;
+		}
+		function getProfilePic($uid)
+		{
+			$user = User::getUserDataByUid($uid);
+			$index = $user["profile_image"];
+			$src = "/files/profile_pics/". $uid. "_".$index."." . $user["ext"];
+			return $src;
 		}
 	}
 ?>

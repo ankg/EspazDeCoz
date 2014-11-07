@@ -1,3 +1,9 @@
+.posts
+	{
+		border-top: 1px solid #e7e7e7;
+		padding-bottom: 50px !important;
+	}
+
 .singlePost, .input
 	{
 		border:1px solid #d9d9d9;
@@ -144,7 +150,6 @@
 		height: 32px;
 		box-sizing: border-box;
 		padding: 4px 10px;
-		/* line-height: 32px; */
 		font-size: 15px;
 		line-height: 22px;
 		color: #4a4a4a;
@@ -220,9 +225,9 @@
 	}
 .head .vote button
 	{
+		cursor: pointer;
 		height: 26px;
 		border: none;
-		/* padding-right: 22px; */
 		background-size: 22px;
 		padding-left: 40px;
 		background-position: 10px center;

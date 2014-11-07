@@ -1,15 +1,16 @@
-<div class="singlePost">
+<div class="singlePost" data-id=<? echo $course_posts[$i]["post_id"]; ?> data-load="true">
 	<div class="head afterClear">
 		<div class="vote">
 			<div class="up"><button>20</button></div>
 			<div class="down"><button>10</button></div>
 		</div>
 		<div class="left profilePic">
-			<img src="image/me.jpg">
+			<? $profile_src = $user->getProfilePic($course_posts[$i]["uid"]);?>
+			<img src=<? echo $profile_src; ?>>
 		</div>
 		<div class="left heading">
-			<p><a class="ref" href="">Kapil</a> uploaded a file for <a class="ref" href="">CS-221</a></p>
-			<h6 class="time">1 min ago</h6>
+			<p><a class="ref" href=""><? echo $data["fullname"]; ?></a> uploaded a file for <a class="ref" href=<? echo "/course/".$param."/".$data_course[0]["course_id"]; ?> ><? echo $data_course[0]["course_title"];?></a></p>
+			<h6 class="time"><? echo Post::getTime($course_posts[$i]["timestamp"]); ?></h6>
 		</div>
 	</div>
 	<div class="postBody afterClear">
@@ -17,25 +18,29 @@
 			<p>Solutions Assignment 2</p>
 			<p>Enjoy</p>
 		</div>
+		<? if($course_posts[$i]["post_image"]!=NULL){ ?>
 		<div class="imageContent">
-			<img src="image/poster.jpg">
+			<img src=<? echo "/files/other_files/post_images/".$course_posts[$i]["post_id"]."_image.".pathinfo($course_posts[$i]["post_image"],PATHINFO_EXTENSION); ?>>
 		</div>
-		<div class="fileContent afterClear">
-			<div class="left thumbnail">
-				<img data-type="pdf" src="image/fileicon/pdf.png">
+		<? } ?>
+		<? if($course_posts[$i]["post_files"]!=NULl){ ?>
+			<div class="fileContent afterClear">
+				<div class="left thumbnail">
+					<img data-type=<? echo pathinfo($course_posts[$i]["post_files"],PATHINFO_EXTENSION); ?> src=<? echo "/app/assets/images/fileicon/". strtolower(pathinfo($course_posts[$i]["post_files"],PATHINFO_EXTENSION)).".png"; ?>>
+				</div>
+				<div class="downloadLink left">
+					<a href=<? echo "/files/other_files/post_files/".$course_posts[$i]["post_id"]."_file.".pathinfo($course_posts[$i]["post_files"],PATHINFO_EXTENSION); ?>>Download</a>
+				</div>
 			</div>
-			<div class="downloadLink left">
-				<a href="">Download</a>
-			</div>
-		</div>
+		<? } ?>
 	</div>
 
 	<div class="commentContainer">
 		<div class="commentLink"><a href="">Comments <span>(20)</span></a></div>
-		<div class="comments">
+		<div class="comments hidden">
 			<div class="singleComment afterClear">
 				<div class="profilePic left">
-					<img src="image/me.jpg">
+					<img src="/app/assets/images/me.jpg">
 				</div>
 				<div class="commentText left">
 					<p class="time">1 min ago</p>
@@ -47,7 +52,7 @@
 		</div>
 		<div class="commentEditor afterClear">
 			<div class="left profilePic">
-				<img src="image/me.jpg">
+				<img src="/app/assets/images/me.jpg">
 			</div>
 			<div class="left commentArea">
 				<form>

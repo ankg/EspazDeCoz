@@ -30,8 +30,10 @@
 		'/uploadprofile' => 'UploadProfileController',
 
 		'/course' => 'CourseController',
-		'/course/:string' => 'CourseController',
-		'/course/:string/:number' => 'CourseController',
+		'/course/([\w\s]*)' => 'CourseController',
+		'/course/([\w\s]*)/:number' => 'CourseController',
+
+		'/posts' => 'PostController',
 
 		'/home' => 'HomeController',
 		'/logout' => 'LogoutController',

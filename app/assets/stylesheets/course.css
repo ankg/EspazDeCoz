@@ -1,8 +1,12 @@
-.heading .refDept
+.postMid > div
+	{
+		width: 470px;
+	}
+.headingC .refDept
 	{
 		color: #696868;
 	}
-.heading .refBranch
+.headingC .refBranch
 	{
 		color: #989898;
 	}
@@ -10,7 +14,6 @@
 	{
 		width: 960px;
 		margin: 0 auto;
-		padding-bottom: 50px;
 	}
 .catalog, .singleCourse
 	{
@@ -20,13 +23,13 @@
 	{
 		margin-top: 30px;
 	}
-.heading a
+.headingC a
 	{
 		font-size: 30px;
 		font-weight: bold;
 		font-family: arial;
 	}
-.heading a:hover
+.headingC a:hover
 	{
 		text-decoration: underline;
 	}
@@ -80,6 +83,10 @@ ol li
 		font-weight: bold;
 		margin-left: 20px;
 	}
+.pdfDisplay .detail .courseDetail
+	{
+		margin-left: 0;
+	}
 .registerCourse a:hover, .pdfDisplay .detail a:hover
 	{
 		text-decoration: underline;
@@ -94,5 +101,11 @@ ol li
 		margin-top: 10px;
 		height: 1070px;
 		width: 960px;
-		border:1px solid #9D9D9D
+		border:1px solid #9D9D9D;
+		overflow: hidden;
+	}
+.pdfContainer
+	{
+		overflow: hidden;
+		display: none;
 	}

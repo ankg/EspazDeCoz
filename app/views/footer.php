@@ -6,6 +6,6 @@
 			<li><a href="">Terms</a></li>
 			<li><a href="">Cookies</a></li>
 		</ul>
-		<span class="name">SAKS</span>
+		<span class="name">EspazDeCoz</span>
 	</div>
 </div>

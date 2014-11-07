@@ -1,0 +1,232 @@
+\documentclass[10pt]{article}
+\usepackage{calc}
+\usepackage[bottom,stable]{footmisc}
+\usepackage{comment}
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em} %1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\begin{enumerate}{}{%
+%        {\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{enumerate}\vspace{-.6\baselineskip}}
+%        {\end{list}\vspace{-.6\baselineskip}}
+\makeatother
+
+\reversemarginpar
+
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+\setlength{\parindent}{0in}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+\usepackage{xcolor,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=purple,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \hyphenpenalty=10000%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}}
+
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}\vspace{-.6\baselineskip}}
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+
+\providecommand*\url[1]{\href{#1}{#1}}
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+
+
+\begin{document}
+\makeheading{\LARGE{Aniket Gupta}\\\normalsize Sophomore in the Department of Computer Science and Engineering,\\ 
+Indian Institute of Technology, Roorkee}
+
+\section{Contact Information}
+
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table
+%       (adjust it to your liking; default is 1.85in).
+%
+\newlength{\rcollength}\setlength{\rcollength}{1.4in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+A-542, Rajiv Bhawan, IIT Roorkee,   & (+91)9557040676 \\
+Roorkee, Uttarakhand 247667.     & \email{ankgruec@iitr.ac.in}\\
+\end{tabular}
+
+\section{Areas Of\\Interest}
+
+Computer Vision, Artificial Intelligence, Machine Learning, Web Development, Data Structures and  Algorithms.
+
+\section{Education}
+
+%\href{http://www.iitk.ac.in}{{Indian Institute of Technology}},
+%Roorkee, Uttarakhand.
+%\begin{outerlist}
+
+%\item[] B.Tech., {Computer Science}, \\Cumulative Grade Point Average(First Two Semesters): 7.9/10\\
+%            \emph{Expected:} Summer 2017
+
+%\end{outerlist}
+
+%\vspace{0.1in}
+
+D.D.E.C. Ramaipur, Kanpur, UP.
+
+ \begin{outerlist}
+\item[] All India Senior School Certificate Examination(A.I.S.S.C.E.) conducted by Central Board of Secondary Education(C.B.S.E.), 2013, Percentage obtained: 92.0
+\end{outerlist}
+\vspace{0.1in}
+
+ Dr. V.S.E.C., Kanpur, UP.
+\begin{outerlist}
+\item[] Indian Certificate of Secondary Education(I.C.S.E.) conducted by Council for the Indian School Certificate Examinations(C.I.S.C.E.), 2011, Percentage obtained: 97.2
+\end{outerlist}
+
+\section{Academic Achievements}
+%\vspace{-0.17in}
+\begin{innerlist}
+\item Secured an All India Rank of 641 out of 14 lakh candidates in J.E.E.-Advanced, 2013.
+\item Ranked in top 0.01\% candidates in J.E.E.-Mains, 2013.
+\item Awarded the Kishore Vaigyanik Protsahan Yojana(K.V.P.Y.) fellowship by the Department of Science and Technology, Government of India, for the year 2011.
+\item Qualified the National Standard Examination in Physics(N.S.E.P.), 2012, placed amongst the top 0.01\% of the candidates.
+\item Qualified the National Standard Examination in Astronomy(N.S.E.A.), 2012.
+ Placed in top 1\% candidates of the state in the same in 2011.
+\item Qualified the Regional Mathematics Olympiad(R.M.O.), 2012.
+\item Secured the first position in inter-school level Mathematical Smartness Contest(MaSCon, 2011) for high school students.
+\end{innerlist}
+
+\section{Projects}
+
+\vspace{-0.11in}
+\begin{outerlist}
+\item[] \textbf{Echo}, \textcolor{darkblue}{May, 2014-July, 2014}, \hfill \textit{SDSLabs}
+\begin{innerlist}
+\item An e-book search application which facilitates e-book search on the IIT Roorkee intranet.
+\item Uses \emph{Solr} for book indexing, runs a \emph{node.js} script daily for indexing.
+\item \emph{Limonade} as a framework, provides effective routing, MVC and REST implementation.
+\end{innerlist}
+
+\item[] \textbf{Barrel Shifter}, \textcolor{darkblue}{February, 2014}, \hfill \textit{Guide: Prof. Sanjeev Manhas}
+\begin{innerlist}
+\item Used to shift a 16-bit binary number by the specified number of bits to the left or right.
+\item Coded in the language VHDL and used Xilinx  as the IDE.
+\end{innerlist}
+
+\item[] \textbf{CourseSpace}, \textcolor{darkblue}{August, 2014-}, \hfill \textit{Guide: Prof. Balasubramaniam Raman}
+\begin{innerlist}
+\item Ongoing project on Object Oriented Analysis and Design.
+\item Is a web application that lets students interact with professors of the
+institute relating the courses that interest them.
+\item Uses the router \emph{Toro}.
+\end{innerlist}
+
+\end{outerlist}
+
+\section{Relevant \\Courses}
+\textbf{Computer Science}\\
+CS101: Introduction to Computer Science and Engineering: Binary Logic, K-maps.\\
+CS103: Introduction to Object Oriented Programming: Java and Applets.\\
+CS102: Data Structures: Trees(AVL, RB), Heaps, Basic Algorithms.\\
+CS106: Discrete Structures: Set theory, Groups, Rings, Fields.\\
+CS291: Analysis and design of Object Oriented systems: UML, Design Methodologies.\\ CS221: Computer Architecture and Microprocessors: Single and Multicycle datapaths, CU, ALU, Processor design(x85 and x86).\\
+
+\textbf{Mathematics}\\
+MA010: Optimization Techniques: Optimizations of real world models.\\
+MA001: Calculus and Linear Algebra: Surface integrals, Volume Integrals, Matrix Operations. 
+
+\section{Technical \\Skills} 
+
+\textbf{Programming:} C, C++, Java, Assembly Language(MIPS and x86).\\
+\textbf{Web:} HTML, CSS, JavaScript, PHP, MySQL.\\
+\textbf{Frameworks:} Limonade, Toro, Jquery, Bootstrap.\\
+\textbf{Other Tools:} \LaTeX, Photoshop.\\
+\textbf{Platforms:} Linux, Windows 8/7/XP.
+
+\section{Positions of\\Responsibility}
+
+\textbf{Editor, Designer and Web Co-ordinator} at \textbf{WatchOut! News Agency}, the official news magazine of I.I.T. Roorkee.\\
+\textbf{Web Developer at SDSLabs}, a popular development and coding group on the forefront of innovation at I.I.T. Roorkee.
+
+\section{Extra-curricular\\Activities}
+\begin{innerlist}
+\item An active spokesperson at IIT Roorkee as a part of SDSLabs: addressed the masses in numerous talks on HTML and web development, with hundreds of people attending.
+\item Member of the Organising Committee of Thomso 2013, the annnual cultural festival of IIT Roorkee.
+\item Attended the BRICS workshop, 2010: Made a remote-controlled car using four way switches and multi-directional motors from scratch.
+\item Made various bots as a member of the School Robotics Club:\\
+Line Follower, 2009: Moves on a defined path in the form of a line.\\
+Ball Grabber,  2009: Searches for a ball in the surroundings and fetches it.\\
+Humanoid,	   2009: A human-like robot, that talks and responds to some fixed stimuli. 
+\end{innerlist}
+
+\section{Talks/Seminars \\Attended}
+\textbf{Vijyoshi, 2012:} At IISc Bangalore, for high school students in which professors from universities like Cambridge, UC Berkeley and IMSc lectured on various topics in science relating to graph theory, cryptography, biology etc.\\
+\textbf{Summer Camp, 2012}: At IISER Bhopal, involving talks on many spheres of science like biology, physics and mathematics by eminent professors.\\
+\textbf{Cloud Computing, 2013}: by Microsoft at IIT Roorkee, involving the evolution and necessity of cloud storage.
+
+\end{document}
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>SAKS | Login</title>
+		<title>EspazDeCoz | Login</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/default.css">
 		<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/headerFooter.css">
