@@ -154,3 +154,36 @@ textarea
 	{
 		border:1px solid #dfdfdf !important;
 	}
+.courseReg, .dialog
+	{
+		position: fixed;
+		top: 80px;
+		width: 200px;
+		margin: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+		font-size: 15px;
+		padding: 12px 15px;	
+	}
+.success
+	{
+		color: rgb(41,127,41);
+		background-color: rgb(160,245,160);
+		border:1px solid rgb(87,190,87);
+	}
+.success p
+	{
+		color: rgb(41,127,41);
+	}
+.err
+	{
+		color: rgb(132,44,44);
+		background-color: rgb(242,149,149);
+		border:1px solid rgb(190,80,80);
+	}
+.err p
+	{
+		color: rgb(132,44,44);
+	}
+

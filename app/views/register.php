@@ -10,7 +10,7 @@
 
 	<body class="footBot">
 		<div id="container">
-			<div class="msg hidden">
+			<div class="msg dialog hidden">
 				<p class="head1"></p>
 				<p class="head2"></p>
 			</div>

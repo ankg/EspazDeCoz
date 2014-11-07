@@ -7,8 +7,6 @@
 		}
 		public static function post_xhr()
 		{
-			//username existence check, echo JSON format
-			//login check
 			/**
 			*Stores the $_POST values in respective variables
 			*/
@@ -25,7 +23,6 @@
 			$time = $date->getTimestamp();
 			$timehash = crypt($time);
 			$salt = substr($timehash, 0, floor(strlen($timehash) / 2)+1);
-			//$password_input = password_hash($password_input.$salt , PASSWORD_DEFAULT);
 			$password_input = password_hash($password_input.$salt , PASSWORD_DEFAULT);
 			/**
 			*Insert the values into the DB

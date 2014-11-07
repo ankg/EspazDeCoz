@@ -1,15 +1,15 @@
 <?php
+	/**
+	* handles what to open on landing
+	*/
 	class LandingController
 	{
-	public function get()
-	{
-	if(isset($_COOKIE['username']))
-		header("Location: /home");
-		//require_once('app/views/home.php');
-	else
-		header("Location: /login");
-	}
-	
-
+		public function get()
+		{
+			if(isset($_COOKIE['username']))
+				header("Location: /home");
+			else
+				header("Location: /login");
+		}
 	}
 ?>

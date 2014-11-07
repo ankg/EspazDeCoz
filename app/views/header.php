@@ -10,16 +10,15 @@
 		</div>
 		<?php
 	if(isset($_COOKIE["uid"]))
-	{ $source = "app/assets/images/".$_COOKIE["uid"];
-		$src = "app/assets/images/default.jpg";
-		if(is_file($source."jpg"))
-			$src = $source."jpg";
-		if(is_file($source."png"))
-			$src = $source."png";
-		if(is_file($source."gif"))
-			$src = $source."gif";
+	{ 
+			$uid = $_COOKIE["uid"];
+			$user = new User();
+			$data = $user->getUserDataByUid($uid);
+			$index = $data["profile_image"];
+			$src = "/files/profile_pics/". $uid. "_".$index."." . $data["ext"];
 		?>
-	<div id="profile" class="left"><img src=<?="$src"?> ></div>
+	<div id="username" class="left"><a href="/profile"><? echo $data["username"]; ?></a></div>
+	<div id="profile" class="left"><a href="/profile"><img src=<?="$src"?> ></a></div>
 	<a href="/logout" id="logout" class="right"></a>
 	<?
 	}

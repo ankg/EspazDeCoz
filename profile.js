@@ -67,34 +67,16 @@ function saveButtonHandler()
 							data.year =  $(texts[1]).val();
 			break;
 		case 'work' 	: 	var workArray = [];
-							var count = 0;
 							for( var i = 0; i < totalLength; ++i )
 							{
-								var fieldValue = $(texts[i]).val();
-								if(fieldValue != '') 
-								{	
-									workArray[count++] = fieldValue;
-								}
-								else
-								{
-									$(texts[i]).remove();
-								}
+								workArray[i] = $(texts[i]).val();
 							}
 							data.workData = workArray;
 			break;
 		case 'skills'	: 	var skillsArray = [];
-							var count = 0;
 							for( var i = 0; i < totalLength; ++i )
 							{
-								var fieldValue = $(texts[i]).val();
-								if(fieldValue != '')
-								{	
-									skillsArray[count++] = fieldValue;
-								}
-								else
-								{
-									$(texts[i]).remove();
-								}
+								skillsArray[i] = $(texts[i]).val();
 							}
 							data.skillsData = skillsArray;
 			break;

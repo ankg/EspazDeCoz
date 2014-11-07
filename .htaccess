@@ -4,4 +4,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php)
 RewriteRule ^(.*)$ index.php/$1 [L]
 AddType text/css .css
-AddType text/javascript .js
+AddType application/javascript .js

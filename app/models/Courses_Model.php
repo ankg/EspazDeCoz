@@ -25,5 +25,11 @@
 			$post = new Post();
 			return $post->getPostByCourse($course_id);
 		}
+		public static function getCoursesByBranch($branch_id)
+		{
+			$branch = new Branch();
+			$data = $branch->getCoursesByBranch($branch_id);
+			return $data;
+		}
 	}
 ?>

@@ -10,6 +10,11 @@
 		private $timestamp;
 		private $comments;
 
+		public static function InsertPost($uid,$post,$course_id,$post_image,$post_files)
+		{
+			$query = MySQL::getInstance()->prepare("INSERT INTO user_posts_courses(uid,post,course_id,post_image,post_files) VALUES (\"$uid\",\"$post\",\"$course_id\",\"$post_image\",\"$post_files\")");
+			$query->execute();
+		}
 		public static function getPostByCourse($course_id, $index=0, $limit=NULL)
 		{
 			$query = MySQL::getInstance()->prepare("SELECT * FROM user_posts_courses WHERE course_id = \"$course_id\"");

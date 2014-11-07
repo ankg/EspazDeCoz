@@ -20,13 +20,21 @@
 	Toro::serve(array(
 		''=> 'LandingController',
 		'/'=>'LandingController',
-		'/login'=>'LoginController',
-		'/login/:string'=>'LoginController',
-		'/home' => 'HomeController',
+
 		'/register'=>'RegisterController',
+
+		'/login'=>'LoginController',
+
 		'/profile' => 'ProfileController',
 		'/profile/:number' =>'ProfileController',
+		'/uploadprofile' => 'UploadProfileController',
+
+		'/course' => 'CourseController',
+		'/course/:string' => 'CourseController',
+		'/course/:string/:number' => 'CourseController',
+
+		'/home' => 'HomeController',
 		'/logout' => 'LogoutController',
-		'/uploadprofile' => 'UploadProfileController'
-		));
+		'/search' => 'SearchController'
+	));
 ?>

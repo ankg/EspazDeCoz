@@ -11,7 +11,9 @@
 			$data = $user->getUserDataByUid($uid);
 			$data_extra = $user->getUserExtraDetails($uid);
 			$index = $data["profile_image"];
-			$src2 = $destination = "files/profile_pics/". $_COOKIE["uid"]. "_".$index."." . $data["ext"];
+			$src2 = "/files/profile_pics/". $uid. "_".$index."." . $data["ext"];
+			$work = explode("/",$data_extra["experience"]);
+			$skills = explode("/",$data_extra["skills"]);
 			require_once('app/views/profile.php');
 		}
 		public static function get_xhr()
@@ -43,6 +45,7 @@
 							{
 								$val = $val . $var . "/";
 							}
+							$val = substr($val, 0, strlen($val)-1);
 							$query = MySQL::getInstance()->prepare("INSERT INTO users_extra(uid,experience) VALUES (\"$uid\",\"$val\")");
 							$query->execute();
 						}
@@ -54,6 +57,7 @@
 							{
 								$val = $val . $var . "/";
 							}
+							$val = substr($val, 0, strlen($val)-1);
 							$query = MySQL::getInstance()->prepare("INSERT INTO users_extra(uid,skills) VALUES (\"$uid\",\"$val\")");
 							$query->execute();
 						}
@@ -81,6 +85,7 @@
 							{
 								$val = $val . $var . "/";
 							}
+							$val = substr($val, 0, strlen($val)-1);
 							$query = MySQL::getInstance()->prepare("UPDATE users_extra SET experience=(\"$val\") WHERE uid=\"$uid\"");
 							$query->execute();
 						}
@@ -92,7 +97,7 @@
 							{
 								$val = $val . $var . "/";
 							}
-							
+							$val = substr($val, 0, strlen($val)-1);
 							$query = MySQL::getInstance()->prepare("UPDATE users_extra SET skills=(\"$val\") WHERE uid=\"$uid\"");
 							$query->execute();
 						}
