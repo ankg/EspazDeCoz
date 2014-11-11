@@ -32,7 +32,7 @@
 						</form>
 					</div>
 				</div>
-				<div id="randomImage" class="right"></div>
+				<div id="randomImage" class="right"><img src="/app/assets/images/poster.png"></div>
 			</div>
 			<?php require_once 'footer.php'; ?>
 		</div>

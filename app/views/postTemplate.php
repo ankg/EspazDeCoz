@@ -9,14 +9,20 @@
 			<img src=<? echo $profile_src; ?>>
 		</div>
 		<div class="left heading">
-			<p><a class="ref" href=""><? echo $data["fullname"]; ?></a> uploaded a file for <a class="ref" href=<? echo "/course/".$param."/".$data_course[0]["course_id"]; ?> ><? echo $data_course[0]["course_title"];?></a></p>
+			<p><a class="ref" href=<? echo "/profile/".$data["uid"]; ?>><? echo $data["fullname"]; ?></a> posted in <a class="ref" href=<? echo "/course/".rawurlencode($param)."/".$data_course[0]["course_id"]; ?> ><? echo $data_course[0]["course_title"];?></a></p>
 			<h6 class="time"><? echo Post::getTime($course_posts[$i]["timestamp"]); ?></h6>
 		</div>
 	</div>
 	<div class="postBody afterClear">
 		<div class="textContent">
-			<p>Solutions Assignment 2</p>
-			<p>Enjoy</p>
+			<?php
+			$post_body = $course_posts[$i]["post"];
+			$post_body = explode("\n", $post_body);
+			foreach ($post_body as $line) 
+			{
+				echo "<p>$line</p>";
+			}
+			?>
 		</div>
 		<? if($course_posts[$i]["post_image"]!=NULL){ ?>
 		<div class="imageContent">
@@ -36,7 +42,7 @@
 	</div>
 
 	<div class="commentContainer">
-		<div class="commentLink"><a href="">Comments <span>(20)</span></a></div>
+		<div class="commentLink"><a href="">Comments <span>(1)</span></a></div>
 		<div class="comments hidden">
 			<div class="singleComment afterClear">
 				<div class="profilePic left">
@@ -44,15 +50,16 @@
 				</div>
 				<div class="commentText left">
 					<p class="time">1 min ago</p>
-					<p>OMG!!</p>
-					<p>Thank u kapil</p>
-					<p>This helps me so much</p>
+					<p>Thank You for the post!</p>
 				</div>
 			</div>
 		</div>
 		<div class="commentEditor afterClear">
 			<div class="left profilePic">
-				<img src="/app/assets/images/me.jpg">
+				<img src=
+				<?php $login_src = $user->getProfilePic($_COOKIE["uid"]);
+						echo $login_src;
+				?>>
 			</div>
 			<div class="left commentArea">
 				<form>

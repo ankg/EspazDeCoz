@@ -2,7 +2,7 @@
 	/**
 	* Includes all the files:- controllers, models and views
 	*/
-
+	require("app/models/Model.php");
 	require_once ("Toro.php");
 	require_once ("password.php");
 	require_once ("config/bootstrap.php");

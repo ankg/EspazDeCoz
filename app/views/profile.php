@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/input.css">
 		<link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/profileEdit.css">
 	</head>
-	<body>
+	<body class="profile">
 		<?php require 'header.php';?>
 		<?php require 'footer.php';?>
 
@@ -19,19 +19,23 @@
 				<div class="profile student">
 					<div class="pic left">
 						<div class="loading hidden"></div>
-						<div class="aniContainer">
-							<div class="picContainer">
-								<img src=<?="$src2"?>>
+						<div class=<?php if($param==$_COOKIE["uid"]) echo "aniContainer";?>>
+							
+							<div class="picContainer" style=<?php echo "background-image:url('$src2');";?>>
 							</div>
-							<? if($param==$_COOKIE["uid"]){ ?>
 							<div class="picEdit">
 								<label class="edit">Change Photo<input type="file" accept="image/*"></label>
 							</div>
-							<? } ?>
+							
+							
+							<div class ="picContainer" onhover="none" style=<?php echo "background-image:url('$src2');";?>>
+							</div>
+							
+
 						</div>
 					</div>
 					<div class="details right">
-						<h3 class="name"><? echo $data["fullname"];?></h3>
+						<h3 class="name"><? echo $data_p["fullname"];?></h3>
 						<h4 class="branch"><? echo $data_extra["branch"];?></h4>
 						<h4 class="year">Year : <? echo $data_extra["year"];?></h5>
 					</div>
@@ -58,7 +62,7 @@
 							<button class="hidden save">Save</button>
 						</div>
 						<div class="academic">
-							<h3 class="type" data-type="academic">Academic<span class="right edit">Edit</span></h3>
+							<h3 class="type" data-type="academic">Academics<span class="right edit">Edit</span></h3>
 							<input spellcheck="false" autocorrect="off" readonly class="text" value=<? echo "\"".$data_extra["branch"]."\""?> type="text" id="branchInput">
 								<!--<p class="hidden text">Computer Science and Engineering</p>-->
 							<input spellcheck="false" autocorrect="off" readonly class="text" value=<? echo "\"".$data_extra["year"]."\""?> type="text" id="yearInput">
@@ -96,26 +100,28 @@
 					<div class="left lane">
 						<div class="quote">
 							<h3 class="type" data-type="quote">Quote</h3>
-							<textarea spellcheck="false" autocorrect="off" readonly class="text"><? echo $data_extra["quote"];?></textarea>
-							<!--<div class="hidden text">Make so many girlfriends knjkvs ksjdvks dvkjsndvk skjdvnks kvjns</div>-->
+							<!--<textarea spellcheck="false" autocorrect="off" readonly class="text"><?// echo $data_extra["quote"];?></textarea>-->
+							<div class="text"><? echo $data_extra["quote"];?></div>
 						</div>
 						<div class="academic">
-							<h3 class="type" data-type="academic">Academic</h3>
-								<p class="hidden text"><?php echo $data_extra["branch"];?></p>
-								<p class="text hidden"><?php echo $data_extra["year"];?></p>
+							<h3 class="type" data-type="academic">Academics</h3>
+								<p class="text"><?php echo $data_extra["branch"];?></p>
+								<p class="text"><?php echo $data_extra["year"];?></p>
 						</div>
 					</div>
 					<div class="right lane">
 						<div class="work">
 							<h3 class="type" data-type="work">Work & Experience</h3>
 							<? foreach ($work as $val){ ?>
-								<textarea spellcheck="false" autocorrect="off" readonly class="text"><? echo $val;?></textarea>
+								<!--<textarea spellcheck="false" autocorrect="off" readonly class="text"><? //echo $val;?></textarea>-->
+								<div class="text"><? echo $val;?></div>
 							<? } ?>
 						</div>
 						<div class="skills">
 							<h3 class="type" data-type="skills">Skills</h3>
 							<? foreach($skills as $val) {?>
-							<textarea spellcheck="false" autocorrect="off" readonly class="text"><? echo $val; ?></textarea>
+							<!--<textarea spellcheck="false" autocorrect="off" readonly class="text"><? //echo $val; ?></textarea>-->
+							<div class="text"><? echo $val;?></div>
 							<?
 							}
 							?>
@@ -129,25 +135,72 @@
 					<h3 class="heading">Classmates</h3>
 					<div class="list">
 						<ul>
-							<li><a href="">Kapil Kumar Singh</a></li>
-							<li><a href="">Aniket Gupta</a></li>
-							<li><a href="">Avinash Duddu</a></li>
+							<li><a href="/profile/42">Kapil Kumar Singh</a></li>
+							<li><a href="/profile/37">Aniket Gupta</a></li>
+							<li><a href="/profile/43">Saksham Arya</a></li>
+							<li><a href="/profile/44">Samar Singh Holkar</a></li>
 						</ul>
 					</div>
 				</div>
 				
-				<div class="courses hidden"></div>
+				<div class="courses hidden">
+					<a href="/course" style="text-decoration:underline" class="heading"><h3>All Departments</h3></a>
+					<h3 class="heading">Registered Courses</h3>
+					<div class="list">
+						<ul>
+					<? foreach ($data_courses_profile as $course) { 
+						$data = $branches->getBranchByCourse($course[0]["course_id"]);
+						?>
+
+						<li><a href=<?php echo "/course/".rawurlencode($data[0]["branch_name"])."/".$course[0]["course_id"];?>><? echo $course[0]["course_title"]; ?></a></li>
+					<? } ?>
+					</ul>
+				</div>
 				<div class="files hidden"></div>
 			</div>
-			<div class="posts hidden">
+			<!--<div class="posts hidden">
 				<div class="postMid afterClear">
 					<div class="left leftPosts">
-						<?php include 'postTemplate.php';?>
+						<?php //include 'postTemplate.php';?>
 					</div>
 					<div class="right rightPosts">
-						<?php include 'postTemplate.php';?>
-						<?php include 'postTemplate.php';?>
+						<?php //include 'postTemplate.php';?>
+						<?php //include 'postTemplate.php';?>
 					</div>
+				</div>
+			</div>-->
+			<div class="posts hidden">
+				<div class="postMid afterClear">
+					<?php 
+					$course_posts = Post::getPostsByUid($param);
+					//var_dump($course_posts);
+					?>
+					<div class="left leftPosts">
+					<?php //include 'inputPost.php';?>
+						<?
+							$total = count($course_posts);
+							for($i=$total-1;$i>=0;$i=$i-2) { ?>
+							<?php 
+							 $course_id = $course_posts[$i]["course_id"];
+							 $data_course = Course::getCourseDetails($course_id);
+							 $user = new User();
+							 $data = $user->getUserDataByUid($course_posts[$i]["uid"]);
+							 include 'postTemplate.php';?>
+						<? } ?>
+					</div>
+					<div class="right rightPosts">
+						<?
+							$total = count($course_posts); 
+						for($i=$total-2;$i>=0;$i=$i-2) { ?>
+						<?php 
+						$course_id = $course_posts[$i]["course_id"];
+						$data_course = Course::getCourseDetails($course_id);
+						$user = new User();
+						$data = $user->getUserDataByUid($course_posts[$i]["uid"]);
+						include 'postTemplate.php';?>
+						<? } ?>
+					</div>
+				
 				</div>
 			</div>
 

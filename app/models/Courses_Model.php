@@ -1,6 +1,9 @@
 <?php
 	
-	class Course
+	/**
+	* Class having all functionality relating to a course
+	*/
+	class Course extends Model
 	{
 		private $course_id;
 		private $course_name;
@@ -12,12 +15,9 @@
 			$query->execute();
 			$data = $query->fetchAll(PDO::FETCH_ASSOC);
 			$allCourse =  [];
-			//echo "data";
-			//var_dump($data);
 			foreach ($data as $value) 
 			{
 				array_push($allCourse, Course::getCourseDetails($value['course_id']));
-				//getCourseDetails($value);
 			}
 			return $allCourse;
 		}
@@ -35,7 +35,7 @@
 		}
 		public static function getCoursesByBranch($branch_id)
 		{
-			$branch = new Branch();
+				$branch = new Branch();
 			$data = $branch->getCoursesByBranch($branch_id);
 			return $data;
 		}

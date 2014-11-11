@@ -1,6 +1,6 @@
 <?php
 	
-	class Post
+	class Post extends Model
 	{
 		private $post_id;
 		private $course_id;
@@ -28,7 +28,7 @@
 		{
 			$query = MySQL::getInstance()->prepare("SELECT * FROM user_posts_courses WHERE uid = \"$uid\"");
 			$query->execute();
-			$data = $query->fetch(PDO::FETCH_ASSOC);
+			$data = $query->fetchAll(PDO::FETCH_ASSOC);
 			return $data;
 		}	
 		public static function getVotesByPost($post_id)

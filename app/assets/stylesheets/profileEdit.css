@@ -66,23 +66,23 @@ textarea.text
 		background-color: #747474;
 		box-shadow: 0 0 2px #747474;
 	}
-.classmate .heading, .achievement .heading
+.classmate .heading, .achievement .heading, .courses .heading
 	{
 		color: #747474;
 		font-size: 26px;
 		letter-spacing: 1px;
 		margin: 0 0 20px 0 !important;
 	}
-.classmate .list li
+.classmate .list li, .courses .list li
 	{
 		margin: 4px 0;
 	}
-.classmate .list a
+.classmate .list a, .courses .list a
 	{
 		font-size: 15px;
 		color: #5074A0;
 	}
-.classmate
+.classmate, .courses
 	{
 		min-height: 130px;
 	}

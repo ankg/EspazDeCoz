@@ -9,11 +9,15 @@
 			$uid = $param;
 			$user = new User();
 			$data = $user->getUserDataByUid($uid);
+			$courses_me = new Course();
+			$data_courses_profile = $courses_me->getCoursesByUid($uid);
 			$data_extra = $user->getUserExtraDetails($uid);
 			$index = $data["profile_image"];
 			$src2 = "/files/profile_pics/". $uid. "_".$index."." . $data["ext"];
 			$work = explode("/",$data_extra["experience"]);
 			$skills = explode("/",$data_extra["skills"]);
+			$branches = new Branch();
+			$data_p= $data;
 			require_once('app/views/profile.php');
 		}
 		public static function get_xhr()

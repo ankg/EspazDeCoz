@@ -1,6 +1,9 @@
 <?php
 	
-	class Branch
+	/**
+	* Class having functions for all branch related queries
+	*/
+	class Branch extends Model
 	{
 		public static function getBranches()
 		{
@@ -9,13 +12,6 @@
 			$data = $query->fetchAll(PDO::FETCH_ASSOC);
 			return $data;
 		}
-		/*public static function getBranches()
-		{
-			$query = MySQL::getInstance()->prepare("SELECT * FROM branches");
-			$query->execute();
-			$data = $query->fetchAll(PDO::FETCH_ASSOC);
-			return $data;
-		}*/
 		public static function getCoursesByBranch($branch_id)
 		{
 			$query = MySQL::getInstance()->prepare("SELECT * FROM courses WHERE branch_id = \"$branch_id\"");
@@ -32,11 +28,6 @@
 		}
 		public static function getBranchByCourse($course_id)
 		{
-			/*$query = MySQL::getInstance()->prepare("SELECT * FROM courses WHERE course_id = \"$course_id\"");
-			$query->execute();
-			$data = $query->fetchAll(PDO::FETCH_ASSOC);
-			return $data;*/
-
 			$query = MySQL::getInstance()->prepare("SELECT branch_name FROM branches WHERE branch_id = (SELECT branch_id FROM courses WHERE course_id = \"$course_id\")");
 			$query->execute();
 			$data = $query->fetchAll(PDO::FETCH_ASSOC);

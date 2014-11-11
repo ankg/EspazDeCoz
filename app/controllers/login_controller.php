@@ -7,7 +7,7 @@
 			function get()
 			{
 			if(isset($_COOKIE["username"]) && isset($_COOKIE["uid"])){
-						header("Location: /home");
+						header("Location: /profile");
 					}
 			 require_once('app/views/login.php');
 			}

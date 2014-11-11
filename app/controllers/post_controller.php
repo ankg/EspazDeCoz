@@ -23,6 +23,9 @@
 			$uid = $_COOKIE["uid"];
 			$username = $_COOKIE["username"];
 			$course_id = $_POST["course_id"];
+			$user_detail = new User();
+			$user_data = $user_detail->getUserDataByUid($uid);
+			$fullname = $user_data["fullname"];
 			$postobj = new Post();
 			$data = $postobj->InsertPost($uid,$course_id,$post,$image,$file);
 			$course = new Course();
@@ -54,7 +57,7 @@
 			}
 			$post = urlencode($post);
 			echo "{	
-						\"username\":\"$username\",
+						\"username\":\"$fullname\",
 						\"uid\":\"$uid\",
 						\"post_id\": \"$latestPostId\",
 						\"course_id\":\"$course_id\",

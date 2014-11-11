@@ -9,8 +9,10 @@
 			<div id="suggestion"></div>
 		</div>
 		<?php
+
 	if(isset($_COOKIE["uid"]))
 	{ 
+
 			$uid = $_COOKIE["uid"];
 			$user = new User();
 			$data = $user->getUserDataByUid($uid);
@@ -18,7 +20,7 @@
 			$src = "/files/profile_pics/". $uid. "_".$index."." . $data["ext"];
 		?>
 	<div id="username" class="left"><a href="/profile"><? echo $data["username"]; ?></a></div>
-	<div id="profile" class="left"><a href="/profile"><img src=<?="$src"?> ></a></div>
+	<div id="profile" class="left"><a href="/profile" style=<? echo "background-image:url('$src');";?>></a></div>
 	<a href="/logout" id="logout" class="right"></a>
 	<?
 	}

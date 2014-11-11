@@ -1,6 +1,6 @@
 #container
 	{
-		padding-bottom: 80px;
+		padding-bottom: 45px;
 	}
 .profileMid
 	{
@@ -26,6 +26,8 @@
 	{
 		width: 100%;
 		height: 230px;
+		background-size: cover;
+		background-position: 25% center;
 	}
 .picEdit
 	{

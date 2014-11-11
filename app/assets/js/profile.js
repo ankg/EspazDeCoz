@@ -158,7 +158,7 @@ function editImage()
 	image = image.children[0].children[0]
 	//console.log(image);
 	image = image.files[0];
-	console.log(image);
+	//console.log(image);
 	data.append('image',image);
 
 	$('.picContainer .loading').removeClass('hidden');
@@ -169,8 +169,8 @@ function editImage()
 			{
 				var data = JSON.parse(request.response);
 				$('.picEdit .edit').off('click',freezePicUpload);
-				$('.picContainer img').remove();
-				$('.picContainer').append('<img src="'+data.url+'">');
+				$('.picContainer').attr('style', 'background-image:url("'+data.url+'")');
+				$('#profile a').attr('style', 'background-image:url("'+data.url+'")');
 				$('.picContainer .loading').addClass('hidden');
 			}
 		}

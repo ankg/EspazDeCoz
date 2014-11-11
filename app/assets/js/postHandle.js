@@ -78,11 +78,13 @@ function displayPost( postId, profileImage, userId, userName, postBody, courseId
 							'<div class="textContent">';
 
 	var textContent = '';
-	var allLines = postBody.split('%0D%0');
+	var allLines = postBody.split('%0D%0A');
 	var countLine = allLines.length;
 	for( var i = 0; i < countLine; ++i )
 	{
-		textContent += '<p>'+decodeURI(allLines[i])+'</p>';
+		var line = allLines[i];
+		line = line.split('+').join(' ');
+		textContent += '<p>'+line+'</p>';
 	}
 
 	output += textContent;
@@ -148,17 +150,9 @@ function displayComment( elt, imageUrl, time, body /* as array each element is o
 							'<img src="'+imageUrl+'">'+
 						'</div>'+
 						'<div class="commentText left">'+
-							'<p class="time">'+time+'</p>';
-
-	var paragraph = body.length;
-	var text = '';
-	
-	for( var i = 0; i < paragraph; ++i )
-	{
-		text += '<p>'+body[i]+'</p>';
-	}
-
-	output += text;
+							'<p class="time">'+time+'</p>'+
+							'<p>'+body+'</p>';
+							
 	output += '</div></div>';
 	
 	$(elt).children('.commentContainer').children('.comments').append( output );
@@ -171,16 +165,21 @@ function postComment(e)
 	var commentBody = $(this).parent().children('.commentBody').val();
 	var post = $(this).parent().parent().parent().parent().parent();
 	var postId = $(post).attr('data-id');
-
-	$.ajax('postComment.php',
+	var data = {};
+	var profileImage = $('#header #profile a').css('background-image');
+	profileImage = profileImage.split('(')[1].split(')')[0];
+	data.imageUrl = profileImage;
+	data.time = "Just now";
+	data.body = commentBody;
+	/*$.ajax('postComment.php',
 	{
 		type 		: 'POST',
 		dataType 	: 'json',
 		data 		: { 'commentBody' : commentBody, 'postId' : postId },
 		success 	: commentSuccess,
 		error 		: commentError
-	});
-
+	});*/
+	displayComment(post, data.imageUrl, data.time, data.body);
 	function commentSuccess(data)
 	{
 		displayComment(post, data.imageUrl, data.time, data.body);
@@ -203,6 +202,8 @@ function postHandler( e )
 	var data = new FormData;
 
 	var courseId = $('.singleCourse .courseName').attr('data-course');
+
+	postBody = postBody.trim();
 	data.append( 'postBody', postBody );
 	data.append( 'course_id', courseId);
 	var postFlag 	= false; // for not posting if there is nothing
@@ -259,9 +260,14 @@ function postHandler( e )
 				var data = JSON.parse(request.response);
 				console.log(data);
 
-				var profileImage = $('#header #profile img').attr('src');
-				displayPost( data.post_id, profileImage, data.uid, data.username, data.post, data.course_id, data.course_title, data.branch, data.image_url, data.file_url);
+				var profileImage = $('#header #profile a').css('background-image');
+				profileImage = profileImage.split('(')[1].split(')')[0];
+				displayPost( data.post_id, profileImage, data.uid, data.username, decodeURI(data.post), data.course_id, data.course_title, data.branch, data.image_url, data.file_url);
 
+				$('#postBody').val('');
+				$('#postBody').removeAttr('style');
+				
+				//$('#postBody').keyup();
 				document.getElementsByName( 'image' )[0].value = '';
 				document.getElementsByName( 'file' )[0].value = '';
 				progress.css( {width:'0%'} );
@@ -301,5 +307,5 @@ $(document).ready(function()
 	$('.commentArea .commentBody').on('keyup', commentButton);
 	$('.postComment').on('click',postComment);
 	$('.commentContainer .commentLink a').on('click', slideComment);
-	$('.singlePost .vote button').on('click',voteHandler);
+	//$('.singlePost .vote button').on('click',voteHandler);
 });

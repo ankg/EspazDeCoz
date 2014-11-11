@@ -1,0 +1,193 @@
+.grid {
+	width: 960px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+	padding-left: 40px;
+	
+}
+
+.grid li {
+	display: inline-block;
+	width: 370px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	border-style: solid;
+	border-color: #f5f5f5;
+	position: relative;
+	padding-left: auto;
+	padding-right: auto;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #fff;
+	color: #747474;
+}
+
+.grid figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #395F8C;
+}
+
+figcaption span
+{
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	
+	display: inline-block;
+	background: #395F8C;
+	color: #fff;
+}
+
+
+.cs-style-4 li {
+	-webkit-perspective: 1700px;
+	-moz-perspective: 1700px;
+	perspective: 1700px;
+	-webkit-perspective-origin: 0 50%;
+	-moz-perspective-origin: 0 50%;
+	perspective-origin: 0 50%;
+}
+
+.cs-style-4 figure {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.cs-style-4 figure > div {
+	overflow: hidden;
+}
+
+.cs-style-4 figure img {
+	 height: 350px;
+	 width: 250px;
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+	padding-left: auto;
+	padding-right: auto;
+}
+
+.no-touch .cs-style-4 figure:hover img,
+.cs-style-4 figure.cs-hover img {
+	-webkit-transform: translateX(45%);
+	-moz-transform: translateX(45%);
+	-ms-transform: translateX(45%);
+	transform: translateX(45%);
+}
+
+
+
+.cs-style-4 figcaption {
+	height: 88.5%;
+	width: 35%;
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: rotateY(-90deg);
+	-moz-transform: rotateY(-90deg);
+	transform: rotateY(-90deg);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-4 figure:hover figcaption,
+.cs-style-4 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-4 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+#members
+{ 
+	background-image: url('../images/pattern.png');
+	background-repeat: repeat;
+  margin-top: 40px;
+	padding-bottom: 60px;
+  
+   
+}
+#members >span
+{    
+	display: block;
+	text-align: center;
+	font-size: 26px;
+	color: #5f5f5f;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 25px 0;
+	
+		
+}
+
+
+#edclogo
+{
+background-color: #f0f0f0;
+ background-image: url('../images/poster.png');
+ width: 600px;
+ height: 400px;
+ z-index: -500;
+	margin-top: 90px;
+}
+.EDC
+{   
+	width: 300px;
+z-index: 50;
+margin-top: 40px;
+font-size: 25px;
+	font-family: calibri;
+	letter-spacing: 1px;
+font-weight: bold;
+/* font-weight: lighter; */
+color: #5074A0
+}
+.EDC li
+{
+list-style-type: initial;
+	font-size: 15px;
+	color: #747474;
+	
+}
+.EDC h2
+{
+	font-size: 20px;
+}

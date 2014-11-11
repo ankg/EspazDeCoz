@@ -22,6 +22,10 @@
 		color: #5074A0;
 		font-weight: bold;
 	}
+.menuContent .posts .postMid
+	{
+		width: 100% !important;
+	}
 .posts .profilePic
 	{
 		width: 45px;

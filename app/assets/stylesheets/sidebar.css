@@ -13,6 +13,7 @@
 	}
 #sidebar .button
 	{
+		transition:right ease-out 0.3s;
 		cursor: pointer;
 		background-image: url('../images/sidebarMenu.png');
 		position: absolute;

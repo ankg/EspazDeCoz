@@ -7,7 +7,7 @@
 		public function get()
 		{
 			if(isset($_COOKIE['username']))
-				header("Location: /home");
+				header("Location: /profile");
 			else
 				header("Location: /login");
 		}
